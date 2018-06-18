@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -127,13 +128,18 @@ namespace CitiX_Biometric_System
         private void frmMainMenu_Load(object sender, EventArgs e)
         {
             dgvEmployeeList.DataSource = BLLEmployee.DtGetAllEmployees();
-            //label1.Text = "";
-            //label2.Text = "";
+            label1.Text = DateTime.Now.ToLongDateString();
+            label2.Text = "";
         }
 
         private void gbKeypad_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void timerRunningTime_Tick(object sender, EventArgs e)
+        {
+            label2.Text = String.Format("{0:HH:mm:ss}", DateTime.Now);
         }
     }
 }

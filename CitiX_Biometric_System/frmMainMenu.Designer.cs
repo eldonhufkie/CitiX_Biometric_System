@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvEmployeeList = new System.Windows.Forms.DataGridView();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.picFingerPrev = new System.Windows.Forms.PictureBox();
@@ -48,6 +49,7 @@
             this.txtPin = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.timerRunningTime = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFingerPrev)).BeginInit();
@@ -72,9 +74,9 @@
             // 
             // picFingerPrev
             // 
-            this.picFingerPrev.Location = new System.Drawing.Point(570, 32);
+            this.picFingerPrev.Location = new System.Drawing.Point(570, 43);
             this.picFingerPrev.Name = "picFingerPrev";
-            this.picFingerPrev.Size = new System.Drawing.Size(104, 105);
+            this.picFingerPrev.Size = new System.Drawing.Size(104, 94);
             this.picFingerPrev.TabIndex = 2;
             this.picFingerPrev.TabStop = false;
             // 
@@ -296,22 +298,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(508, 9);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(427, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 21);
+            this.label1.Size = new System.Drawing.Size(74, 24);
             this.label1.TabIndex = 5;
             this.label1.Text = "label1";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(617, 8);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(427, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 21);
+            this.label2.Size = new System.Drawing.Size(74, 24);
             this.label2.TabIndex = 6;
             this.label2.Text = "label2";
+            // 
+            // timerRunningTime
+            // 
+            this.timerRunningTime.Enabled = true;
+            this.timerRunningTime.Interval = 1000;
+            this.timerRunningTime.Tick += new System.EventHandler(this.timerRunningTime_Tick);
             // 
             // frmMainMenu
             // 
@@ -361,6 +369,7 @@
         private System.Windows.Forms.TextBox txtPin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer timerRunningTime;
     }
 }
 
