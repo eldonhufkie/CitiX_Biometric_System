@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitiX_Biometric_System", "CitiX_Biometric_System\CitiX_Biometric_System.csproj", "{C34FC38A-FDAB-4661-97E6-87DC3881AC5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitiX_Biometric_DAL", "CitiX_Biometric_DAL\CitiX_Biometric_DAL.csproj", "{912AD496-DCEC-4197-BEA9-28B6D17151D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CitiX_Biometric_BLL", "CitiX_Biometric_BLL\CitiX_Biometric_BLL.csproj", "{B4714D3F-0E84-4E84-9B3B-E8A24EB3B733}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C34FC38A-FDAB-4661-97E6-87DC3881AC5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C34FC38A-FDAB-4661-97E6-87DC3881AC5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C34FC38A-FDAB-4661-97E6-87DC3881AC5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C34FC38A-FDAB-4661-97E6-87DC3881AC5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{912AD496-DCEC-4197-BEA9-28B6D17151D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{912AD496-DCEC-4197-BEA9-28B6D17151D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{912AD496-DCEC-4197-BEA9-28B6D17151D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{912AD496-DCEC-4197-BEA9-28B6D17151D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4714D3F-0E84-4E84-9B3B-E8A24EB3B733}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4714D3F-0E84-4E84-9B3B-E8A24EB3B733}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4714D3F-0E84-4E84-9B3B-E8A24EB3B733}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4714D3F-0E84-4E84-9B3B-E8A24EB3B733}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
