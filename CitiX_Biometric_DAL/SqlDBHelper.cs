@@ -9,7 +9,7 @@ namespace CitiX_Biometric_DAL
 {
     class SqlDBHelper
     {
-        static string CONNECTION_STRING = ConfigurationManager.ConnectionStrings["connstring"].ToString();
+        static string CONNECTION_STRING = ConfigurationManager.ConnectionStrings["dbconnection"].ToString();
         // This function will be used to execute R(CRUD) operation of parameterless commands
         //==================================================================================================================================================================================================
         #region ExecuteScalarCommand()

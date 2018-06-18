@@ -46,6 +46,8 @@
             this.btnZero = new System.Windows.Forms.Button();
             this.btn_ClearEverything = new System.Windows.Forms.Button();
             this.txtPin = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFingerPrev)).BeginInit();
@@ -70,9 +72,9 @@
             // 
             // picFingerPrev
             // 
-            this.picFingerPrev.Location = new System.Drawing.Point(570, 12);
+            this.picFingerPrev.Location = new System.Drawing.Point(570, 32);
             this.picFingerPrev.Name = "picFingerPrev";
-            this.picFingerPrev.Size = new System.Drawing.Size(104, 125);
+            this.picFingerPrev.Size = new System.Drawing.Size(104, 105);
             this.picFingerPrev.TabIndex = 2;
             this.picFingerPrev.TabStop = false;
             // 
@@ -98,6 +100,7 @@
             this.gbKeypad.TabIndex = 3;
             this.gbKeypad.TabStop = false;
             this.gbKeypad.Text = "Keypad";
+            this.gbKeypad.Enter += new System.EventHandler(this.gbKeypad_Enter);
             // 
             // btnEnter
             // 
@@ -290,11 +293,33 @@
             this.txtPin.Size = new System.Drawing.Size(146, 33);
             this.txtPin.TabIndex = 4;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(508, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 21);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(617, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 21);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "label2";
+            // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(698, 405);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPin);
             this.Controls.Add(this.gbKeypad);
             this.Controls.Add(this.picFingerPrev);
@@ -304,6 +329,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Menu";
+            this.Load += new System.EventHandler(this.frmMainMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployeeList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picFingerPrev)).EndInit();
@@ -333,6 +359,8 @@
         private System.Windows.Forms.Button btn_ClearEverything;
         private System.Windows.Forms.Button btnEnter;
         private System.Windows.Forms.TextBox txtPin;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

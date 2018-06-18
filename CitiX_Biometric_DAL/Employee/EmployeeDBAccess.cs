@@ -46,25 +46,41 @@ namespace CitiX_Biometric_DAL
         //    };
         //    return SqlDBHelper.ExecuteNonQuery("usp_DeleteEmployee", CommandType.StoredProcedure, parameters);
         //}
-        public DataTable dtGetEmployeeList()
-        {
-            DataTable dtempList = SqlDBHelper.ExecuteSelectCommand("usp_GetAllEmployees", CommandType.StoredProcedure);
-            return dtempList;
-        }
-        public DataTable dtGetCredentialsForLogin()
-        {
-            DataTable dtcred = SqlDBHelper.ExecuteSelectCommand("usp_GetLoginDetails", CommandType.StoredProcedure);
-            return dtcred;
-        }
-        public bool UpdateStatus(Employee_DAL emp)
+      
+        public bool UpdateStatusAndAddClockIn(Employee_DAL emp)
         {
             bool updated;
             SqlParameter[] pars = new SqlParameter[]
             {
-                new  SqlParameter("@",emp.PIN)
+                new SqlParameter("@pin",emp.PIN),
+                new SqlParameter("@date",DateTime.Now)
             };
-            updated = SqlDBHelper.ExecuteNonQuery("usp_UpdateStatus", CommandType.StoredProcedure, pars);
+            updated = SqlDBHelper.ExecuteNonQuery("usp_UpdateStatusAddClockInTime", CommandType.StoredProcedure, pars);
             return updated;
+        }
+
+        public bool UpdateStatusAndAddClockOut(Employee_DAL emp)
+        {
+            bool updated;
+            SqlParameter[] pars = new SqlParameter[]
+            {
+                new SqlParameter("@pin",emp.PIN),
+                new SqlParameter("@date",DateTime.Now)
+            };
+            updated = SqlDBHelper.ExecuteNonQuery("usp_UpdateStatusAndClockOut", CommandType.StoredProcedure, pars);
+            return updated;
+        }
+        public DataTable DtGetAllEmployees()
+        {
+            return SqlDBHelper.ExecuteSelectCommand("usp_GetAllEmployees", CommandType.StoredProcedure);
+        }
+        public DataTable DtGetAllEmployeesLoggedIn()
+        {
+            return SqlDBHelper.ExecuteSelectCommand("usp_GetAllLoggedInEmployees", CommandType.StoredProcedure);
+        }
+        public DataTable DtGetAllEmployeesLoggedOut()
+        {
+            return SqlDBHelper.ExecuteSelectCommand("usp_GetAllLoggedOutEmployees", CommandType.StoredProcedure);
         }
     }
 }

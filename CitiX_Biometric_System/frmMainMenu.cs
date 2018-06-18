@@ -6,12 +6,17 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using CitiX_Biometric_BLL;
+using CitiX_Biometric_DAL;
 
 namespace CitiX_Biometric_System
 {
     public partial class frmMainMenu : Form
     {
         string inputPin;
+        Employee BLLEmployee = new Employee();
+        Employee_DAL dalEmployee = new Employee_DAL();
+        int count = 0;
         public frmMainMenu()
         {
             InitializeComponent();
@@ -19,8 +24,29 @@ namespace CitiX_Biometric_System
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
+            if (BLLEmployee.DtGetAllEmployees().Rows[0][1].ToString() == "Clocked Out")
+            {
+                dalEmployee.PIN = inputPin;
+                //when count is = 0, Clock 0
+                BLLEmployee.UpdateStatus(dalEmployee);
+                if (BLLEmployee.UpdateStatus(dalEmployee) == true)
+                {
+                    MessageBox.Show(BLLEmployee.DtGetAllEmployees().Rows[0][0].ToString() + " Clocked in.","Clocked In", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                dgvEmployeeList.DataSource = BLLEmployee.DtGetAllEmployeesLoggedIn();
             
+            }
+            else
+            {
+                dalEmployee.PIN = inputPin;
+                //when count is = 1, Clock out
+                BLLEmployee.UpdateStatusAndAddClockOut(dalEmployee);
+                dgvEmployeeList.DataSource = BLLEmployee.DtGetAllEmployeesLoggedOut();
+          
+            }
         }
+
+        
 
         private void btn_ClearEverything_Click(object sender, EventArgs e)
         {
@@ -94,6 +120,18 @@ namespace CitiX_Biometric_System
         }
 
         private void frmMainMenu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void frmMainMenu_Load(object sender, EventArgs e)
+        {
+            dgvEmployeeList.DataSource = BLLEmployee.DtGetAllEmployees();
+            //label1.Text = "";
+            //label2.Text = "";
+        }
+
+        private void gbKeypad_Enter(object sender, EventArgs e)
         {
 
         }
